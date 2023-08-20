@@ -1,0 +1,43 @@
+.search-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.search-menu__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-menu__btns button {
+    border: none;
+    background-color: #f9f9f9;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.search-menu__btns button.active {
+    background-color: #282828;
+    color: #fff;
+}
+
+.search-menu__select {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.search-menu__select select {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px dotted #FE5F1E;
+    cursor: pointer;
+}
+
+.search-menu__select select option {
+    display: inline-block;
+    padding: 100px;
+}

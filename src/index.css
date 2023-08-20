@@ -1,0 +1,30 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #FFDF8C;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+#root {
+    max-width: 1340px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 52px 48px 67px 67px;
+    background-color: #fff;
+    position: relative;
+}
+
+a, span {
+    text-decoration: none;
+    display: inline-block;
+}
+
+button {
+    cursor: pointer;
+}
