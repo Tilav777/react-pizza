@@ -21,17 +21,27 @@ export const Context = createContext()
 function App() {
   const [datas, setDatas] = useState(pizzas)
   const [active, setActive] = useState(1)
+  const [basketData, setBasketData] = useState([])
 
   function getBasketData(id) {
-    setDatas(prev => {
-      return prev.map(data => {
-        if(data.id === id) {
-          return {...data, countShop: data.countShop + 1}
-        }else {
-          return data
-        }
+    let isBasket = basketData.find(data => data.id === id)
+    let basket = pizzas.find(data => data.id === id)
+    
+    if(isBasket) {
+      setBasketData(prev => {
+        return prev.map(data => {
+          if(data.id === id) {
+            return {...data, countShop: data.countShop + 1}
+          }else {
+            return data
+          }
+        })
       })
-    })
+    }else {
+      setBasketData(prev => {
+        return [...prev, {...basket, countShop: basket.countShop + 1}]
+      })
+    }
   }
 
   function hendleSizeOne(id) {
@@ -95,7 +105,7 @@ function App() {
         })
       })
         
-    }else {
+    }else if(type === 'popularity'){
       setDatas(pizzas)
     }
   }
@@ -132,7 +142,7 @@ function App() {
   }
 
   return (
-    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData}}>
+    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData, basketData}}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
