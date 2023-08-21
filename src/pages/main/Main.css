@@ -118,5 +118,7 @@
 }
 
 .card__total-price button.active {
-    background-color: red;
+    border: 1px solid #FE5F1E;
+    background-color: #fff;
+    color: #FE5F1E;
 }
