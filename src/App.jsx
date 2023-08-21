@@ -22,6 +22,18 @@ function App() {
   const [datas, setDatas] = useState(pizzas)
   const [active, setActive] = useState(1)
 
+  function getBasketData(id) {
+    setDatas(prev => {
+      return prev.map(data => {
+        if(data.id === id) {
+          return {...data, countShop: data.countShop + 1}
+        }else {
+          return data
+        }
+      })
+    })
+  }
+
   function hendleSizeOne(id) {
     setDatas(prev => {
       return prev.map(data => {
@@ -30,6 +42,7 @@ function App() {
       })
     })
   }
+
   function hendleSizeTwo(id) {
     setDatas(prev => {
       return prev.map(data => {
@@ -38,6 +51,7 @@ function App() {
       })
     })
   }
+
   function hendleSizeThree(id) {
     setDatas(prev => {
       return prev.map(data => {
@@ -118,7 +132,7 @@ function App() {
   }
 
   return (
-    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree}}>
+    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData}}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />

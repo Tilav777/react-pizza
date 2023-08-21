@@ -6,7 +6,7 @@ import { Context } from '../../App'
 import SearchMenu from '../../components/search/SearchMenu'
 
 function Main() {
-  const { datas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree } = useContext(Context)
+  const { datas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData } = useContext(Context)
 
   return (
     <main className='main-page'>
@@ -32,7 +32,7 @@ function Main() {
               </div>
               <div className='card__total-price'>
                 <p>от {pizza.price[pizza.selectHeight][pizza.selectSize]} ₽</p>
-                <button><i className="bi bi-plus"></i>Добавить</button>
+                <button onClick={() => getBasketData(pizza.id)}><i className="bi bi-plus"></i>Добавить</button>
               </div>
             </div>
           )

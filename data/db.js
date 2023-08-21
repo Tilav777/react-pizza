@@ -13,6 +13,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -24,6 +25,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -35,6 +37,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -46,6 +49,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -57,6 +61,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -68,6 +73,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -79,6 +85,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     {
@@ -90,6 +97,7 @@ export const pizzas = [
         size: [26, 30, 40],
         selectHeight: 0,
         selectSize: 0,
+        countShop: 0,
         height: ['тонкое', 'традиционное']
     },
     
