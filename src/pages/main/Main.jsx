@@ -32,7 +32,12 @@ function Main() {
               </div>
               <div className='card__total-price'>
                 <p>от {pizza.price[pizza.selectHeight][pizza.selectSize]} ₽</p>
-                <button onClick={() => getBasketData(pizza.id)}><i className="bi bi-plus"></i>Добавить</button>
+                {
+                  pizza.countShop > 0 && <button onClick={() => getBasketData(pizza.id)} className='active'><i className="bi bi-plus"></i>Добавить<span>{pizza.countShop}</span></button>
+                }
+                {
+                  pizza.countShop === 0 && <button onClick={() => getBasketData(pizza.id)}><i className="bi bi-plus"></i>Добавить</button>
+                }
               </div>
             </div>
           )

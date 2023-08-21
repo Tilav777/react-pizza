@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Routes, Route } from 'react-router-dom'
 import { createContext } from 'react'
 import { useState } from 'react'
+import { useEffect } from 'react'
 
 // Datas
 import { pizzas } from '../data/db'
@@ -21,27 +22,27 @@ export const Context = createContext()
 function App() {
   const [datas, setDatas] = useState(pizzas)
   const [active, setActive] = useState(1)
-  const [basketData, setBasketData] = useState([])
+  const [basketCounter, setBasketCounter] = useState(0)
+
+  useEffect(() => {
+    setBasketCounter(() => {
+      return datas?.reduce((sum, item) => {
+        return sum + item.countShop
+      }, 0)
+    })
+  }, [datas])
+
 
   function getBasketData(id) {
-    let isBasket = basketData.find(data => data.id === id)
-    let basket = pizzas.find(data => data.id === id)
-    
-    if(isBasket) {
-      setBasketData(prev => {
-        return prev.map(data => {
-          if(data.id === id) {
-            return {...data, countShop: data.countShop + 1}
-          }else {
-            return data
-          }
-        })
+    setDatas(prev => {
+      return prev.map(data => {
+        if(data.id === id) {
+          return {...data, countShop: data.countShop + 1}
+        }else {
+          return data
+        }
       })
-    }else {
-      setBasketData(prev => {
-        return [...prev, {...basket, countShop: basket.countShop + 1}]
-      })
-    }
+    })
   }
 
   function hendleSizeOne(id) {
@@ -142,7 +143,7 @@ function App() {
   }
 
   return (
-    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData, basketData}}>
+    <Context.Provider value={{datas, hendleSearch, active, sortDatas, handleHeightOne, handleHeightTwo, hendleSizeOne, hendleSizeTwo, hendleSizeThree, getBasketData, basketCounter}}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />

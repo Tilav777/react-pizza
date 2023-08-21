@@ -116,3 +116,7 @@
     padding: 5px;
     border-radius: 50%;
 }
+
+.card__total-price button.active {
+    background-color: red;
+}

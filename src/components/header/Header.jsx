@@ -9,7 +9,8 @@ import icon from '../../assets/icon.svg'
 
 function Header() {
 
-  const { datas, basketData } = useContext(Context)
+  const { basketCounter } = useContext(Context)
+
 
   return (
     <>
@@ -23,7 +24,7 @@ function Header() {
         </Link>
         <Link to="/basket">
           <p>520 $</p>
-          <p><i className="bi bi-cart2"></i><span>{basketData.length}</span></p>
+          <p><i className="bi bi-cart2"></i><span>{basketCounter}</span></p>
         </Link>
       </header>
       <hr className='header__hr'/>
